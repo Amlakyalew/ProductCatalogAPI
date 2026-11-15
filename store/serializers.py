@@ -1,3 +1,4 @@
+from django.utils.text import slugify
 from rest_framework import serializers
 from .models import Category, Product, ProductImage
 
@@ -6,7 +7,12 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = ['id', 'name', 'slug', 'description', 'created_at']
 
+
+    
+
 class ProductSerializer(serializers.ModelSerializer):
+    # category = CategorySerializer(many=True)
+
     class Meta:
         model = Product
         fields = ['id', 'name', 'description', 'price', 'category', 'stock', 'available', 'created_at', 'updated_at']
