@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from .models import Category, Product, ProductImage
 from .serializers import CategorySerializer, ProductSerializer, ProductImageSerializer
+from .paginations import ProductsListPagination
 
 
 
@@ -12,6 +13,7 @@ class CategoryViewset(ModelViewSet):
 class ProductViewset(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    pagination_class = ProductsListPagination
 
 class ProductImangeViewset(ModelViewSet):
     queryset = ProductImage.objects.all()
