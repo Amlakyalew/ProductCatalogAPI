@@ -1,8 +1,15 @@
-from rest_framework.routers import DefaultRouter
-from .views import CategoryViewset, ProductViewset
+from django.urls import path, include
+from rest_framework_nested import routers
+from .views import CategoryViewset, ProductViewset, ProductImangeViewset
 
-router = DefaultRouter()
+router = routers.DefaultRouter()
 router.register('categories', viewset=CategoryViewset)
 router.register('products', viewset=ProductViewset)
 
-urlpatterns = router.urls
+product_router = routers.NestedDefaultRouter(router, 'products', lookup='product')
+product_router.register('images', viewset=ProductImangeViewset, basename='product-images')
+
+urlpatterns = [
+    path('', include(router.urls)),
+    path('', include(product_router.urls))
+]
