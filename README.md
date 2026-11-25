@@ -26,7 +26,7 @@
 #### Clone Repository
 
 ```bash
-git clone [https://github.com/Amlakyalew/ProductCatalogAPI.git](https://github.com/Amlakyalew/ProductCatalogAPI.git)
+git clone https://github.com/Amlakyalew/ProductCatalogAPI.git
 cd ProductCatalogAPI
 ```
 
@@ -40,6 +40,7 @@ pipenv install
 
 ```bash
 pipenv shell
+python manage.py migrate
 python manage.py runserver
 ```
 
