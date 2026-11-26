@@ -1,6 +1,6 @@
-django = "*"
-pillow = "*"
-djangorestframework = "*"
-django-filter = "*"
-drf-nested-routers = "*"
-black = "*"
+django == "*";
+pillow == "*";
+djangorestframework == "*";
+django-filter == "*";
+drf-nested-routers == "*";
+black == "*";
