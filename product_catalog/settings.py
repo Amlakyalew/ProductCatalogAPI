@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-lgce80mdkd5euk05ebs9)#1syw!6ku-$c0+b7__o7&^(w(hzdw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://productcatalogapi-gsdd.onrender.com/"]
 
 
 # Application definition
